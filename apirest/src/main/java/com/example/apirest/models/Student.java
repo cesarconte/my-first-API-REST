@@ -1,7 +1,11 @@
 package com.example.apirest.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name="students")
 public class Student {
@@ -11,11 +15,11 @@ public class Student {
     private String firstName;
     private String lastName;
     private String subject;
-    private double grade;
+    private String grade;
 
     public Student() {
     }
-    public Student(int id, String firstName, String lastName, String subject, double grade) {
+    public Student(int id, String firstName, String lastName, String subject, String grade) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,43 +27,23 @@ public class Student {
         this.grade = grade;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getSubject() {
-        return subject;
     }
 
     public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public double getGrade() {
-        return grade;
-    }
-
-    public void setGrade(double grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 }
